@@ -22,7 +22,9 @@ export class DBRecipeRepository implements IRecipeRepository {
     return DBRecipeRepository.ormRepo;
   }
 
-  async create(recipe: DTOCreateRecipe): Promise<RecipeEntity | undefined | null> {
+  async create(
+    recipe: DTOCreateRecipe
+  ): Promise<RecipeEntity | undefined | null> {
     const { image, title, topic, user } = recipe;
     const recipeObj = this.getOrmRepo().create({
       image,
