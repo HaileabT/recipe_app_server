@@ -1,6 +1,7 @@
 import { configDotenv } from "dotenv";
 
 configDotenv();
+
 export const ENV = {
   port: process.env.PORT,
   dbHost: process.env.DB_HOST,
@@ -8,4 +9,5 @@ export const ENV = {
   dbPassword: process.env.DB_PASSWORD,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
+  authSecret: process.env.AUTH_SECRET,
 };
