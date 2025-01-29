@@ -1,4 +1,11 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { IRecipe } from "../../domain/entities/IRecipe";
 import { StepEntity } from "./StepEntity";
 import { TopicEntity } from "./TopicEntity";
@@ -6,13 +13,13 @@ import { UserEntity } from "./UserEntity";
 
 @Entity("recipe")
 export class RecipeEntity implements IRecipe {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id!: string;
 
   @Column()
   title!: string;
 
-  @Column()
+  @Column({ nullable: true })
   image?: string;
 
   @OneToMany(() => StepEntity, (step: StepEntity) => step.recipe)
