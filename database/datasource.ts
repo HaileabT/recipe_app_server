@@ -4,10 +4,10 @@ import { ENV } from "../shared/env";
 
 export const appDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
-  username: "postgres",
-  password: "habtesh01",
-  database: "Recipe app",
+  host: ENV.dbHost,
+  username: ENV.dbUsername,
+  password: ENV.dbPassword,
+  database: ENV.dbPassword,
   port: parseInt(ENV.dbPort ?? "") | 5432,
   entities: [__dirname + "/entities/**/*.ts"],
   logging: true,
