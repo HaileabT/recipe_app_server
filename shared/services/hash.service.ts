@@ -17,7 +17,8 @@ export class HashService {
     let hashedWord: string | undefined = undefined;
     try {
       hashedWord = await HashService.package.hash(word, 10);
-    } catch (error: any) {
+    } catch (err: any) {
+      console.log(err);
       return;
     }
 
@@ -28,7 +29,8 @@ export class HashService {
     let isTheSame: boolean = false;
     try {
       isTheSame = await HashService.package.compare(word, hashedWord);
-    } catch (error: any) {
+    } catch (err: any) {
+      console.log(err);
       return false;
     }
 

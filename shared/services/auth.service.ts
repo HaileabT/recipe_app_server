@@ -48,6 +48,7 @@ export class AuthService {
     try {
       payload = await this.verifyAsync(token);
     } catch (err: any) {
+      console.log(err);
       return;
     }
 
@@ -59,6 +60,7 @@ export class AuthService {
     try {
       token = await this.signAsync(JSON.stringify(payload));
     } catch (err: any) {
+      console.log(err);
       return;
     }
 
