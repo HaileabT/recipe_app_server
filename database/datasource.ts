@@ -7,7 +7,7 @@ export const appDataSource = new DataSource({
   host: ENV.dbHost,
   username: ENV.dbUsername,
   password: ENV.dbPassword,
-  database: ENV.dbPassword,
+  database: ENV.dbName,
   port: parseInt(ENV.dbPort ?? "") | 5432,
   entities: [__dirname + "/entities/**/*.ts"],
   logging: true,
