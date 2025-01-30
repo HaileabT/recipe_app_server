@@ -5,6 +5,7 @@ import {
   createUser,
 } from "../controller/user.controller";
 import { catchControllerError } from "../../utility/catchControllerErrors";
+import { AuthMiddleware } from "../middleware/AuthMiddleware";
 
 const userRoute = Router();
 
